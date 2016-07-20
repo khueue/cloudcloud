@@ -1,0 +1,58 @@
+{
+    "Resources": {
+        "AppBucket": {
+            "Properties": {
+                "BucketName": "cloudcloud-site-app",
+                "LoggingConfiguration": {
+                    "DestinationBucketName": {
+                        "Ref": "LogBucket"
+                    },
+                    "LogFilePrefix": "s3/"
+                },
+                "WebsiteConfiguration": {
+                    "IndexDocument": "index.html"
+                }
+            },
+            "Type": "AWS::S3::Bucket"
+        },
+        "AppBucketPolicy": {
+            "Properties": {
+                "Bucket": "cloudcloud-site-app",
+                "PolicyDocument": {
+                    "Statement": [
+                        {
+                            "Action": [
+                                "s3:GetObject"
+                            ],
+                            "Effect": "Allow",
+                            "Principal": {
+                                "AWS": "*"
+                            },
+                            "Resource": [
+                                "arn:aws:s3:::cloudcloud-site-app/*"
+                            ],
+                            "Sid": "AllowPublicRead"
+                        }
+                    ]
+                }
+            },
+            "Type": "AWS::S3::BucketPolicy"
+        },
+        "LogBucket": {
+            "Properties": {
+                "AccessControl": "LogDeliveryWrite",
+                "BucketName": "cloudcloud-site-logs",
+                "LifecycleConfiguration": {
+                    "Rules": [
+                        {
+                            "ExpirationInDays": 21,
+                            "Id": "DeleteOldObjects",
+                            "Status": "Enabled"
+                        }
+                    ]
+                }
+            },
+            "Type": "AWS::S3::Bucket"
+        }
+    }
+}

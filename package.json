@@ -1,0 +1,24 @@
+{
+  "name": "cloudcloud",
+  "version": "0.0.1",
+  "description": "Website for cloudcloud.io",
+  "author": "Sebastian Lundström <khueue@gmail.com>",
+  "keywords": [
+    "cloudcloud",
+    "cloudcloud.io",
+    "cfn-reducer",
+    "cloudformation"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "generate-templates": "exec ./scripts/generate-templates.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/khueue/cloudcloud.git"
+  },
+  "dependencies": {
+    "bower": "1.7.9",
+    "browserify": "13.0.1"
+  }
+}

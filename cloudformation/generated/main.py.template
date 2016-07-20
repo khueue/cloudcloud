@@ -1,0 +1,56 @@
+{
+    "Resources": {
+        "CloudFrontDistribution": {
+            "Properties": {
+                "DistributionConfig": {
+                    "Aliases": [
+                        "cloudcloud.io",
+                        "*.cloudcloud.io"
+                    ],
+                    "DefaultCacheBehavior": {
+                        "AllowedMethods": [
+                            "GET",
+                            "HEAD",
+                            "OPTIONS"
+                        ],
+                        "CachedMethods": [
+                            "GET",
+                            "HEAD",
+                            "OPTIONS"
+                        ],
+                        "Compress": "true",
+                        "DefaultTTL": 10,
+                        "ForwardedValues": {
+                            "Cookies": {
+                                "Forward": "none"
+                            },
+                            "Headers": [],
+                            "QueryString": "false"
+                        },
+                        "MaxTTL": 10,
+                        "MinTTL": 10,
+                        "TargetOriginId": "origin",
+                        "ViewerProtocolPolicy": "allow-all"
+                    },
+                    "Enabled": "true",
+                    "Logging": {
+                        "Bucket": "cloudcloud-site-logs.s3.amazonaws.com",
+                        "IncludeCookies": "true",
+                        "Prefix": "cloudfront/"
+                    },
+                    "Origins": [
+                        {
+                            "CustomOriginConfig": {
+                                "OriginProtocolPolicy": "http-only"
+                            },
+                            "DomainName": "cloudcloud-site-app.s3-website-eu-west-1.amazonaws.com",
+                            "Id": "origin"
+                        }
+                    ],
+                    "PriceClass": "PriceClass_100"
+                }
+            },
+            "Type": "AWS::CloudFront::Distribution"
+        }
+    }
+}

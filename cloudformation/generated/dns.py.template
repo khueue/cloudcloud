@@ -1,0 +1,28 @@
+{
+    "Resources": {
+        "RecordSetGroup": {
+            "Properties": {
+                "HostedZoneName": "cloudcloud.io.",
+                "RecordSets": [
+                    {
+                        "AliasTarget": {
+                            "DNSName": "diwuc9dghsb9d.cloudfront.net.",
+                            "HostedZoneId": "Z2FDTNDATAQYW2"
+                        },
+                        "Name": "cloudcloud.io.",
+                        "Type": "A"
+                    },
+                    {
+                        "AliasTarget": {
+                            "DNSName": "diwuc9dghsb9d.cloudfront.net.",
+                            "HostedZoneId": "Z2FDTNDATAQYW2"
+                        },
+                        "Name": "www.cloudcloud.io.",
+                        "Type": "A"
+                    }
+                ]
+            },
+            "Type": "AWS::Route53::RecordSetGroup"
+        }
+    }
+}
