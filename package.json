@@ -11,7 +11,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "generate-templates": "exec ./scripts/generate-templates.sh",
+    "infra-generate": "exec ./scripts/infra-generate.sh",
+    "infra-upload": "exec ./scripts/infra-upload.sh",
     "app-build": "exec ./scripts/app-build.sh",
     "app-deploy": "exec ./scripts/app-deploy.sh"
   },
