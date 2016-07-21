@@ -11,14 +11,22 @@
   ],
   "license": "MIT",
   "scripts": {
-    "generate-templates": "exec ./scripts/generate-templates.sh"
+    "generate-templates": "exec ./scripts/generate-templates.sh",
+    "app-build": "exec ./scripts/app-build.sh",
+    "app-deploy": "exec ./scripts/app-deploy.sh"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/khueue/cloudcloud.git"
   },
   "dependencies": {
-    "bower": "1.7.9",
-    "browserify": "13.0.1"
+    "@cycle/dom": "10.1.0",
+    "@cycle/xstream-run": "3.0.3",
+    "babel-preset-es2015": "6.9.0",
+    "babelify": "7.3.0",
+    "browserify": "13.0.1",
+    "cfn-reducer": "1.0.0",
+    "minifyify": "7.3.3",
+    "xstream": "5.2.4"
   }
 }

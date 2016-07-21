@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Exit on error.
 set -o errexit
+set -o xtrace
 
 # Python with:
 # -Wall Warnings.
