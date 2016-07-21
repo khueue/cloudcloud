@@ -56,7 +56,7 @@
         },
         "TemplateBucket": {
             "Properties": {
-                "BucketName": "cloudcloud-site-templates"
+                "BucketName": "cloudcloud-site-cloudformation"
             },
             "Type": "AWS::S3::Bucket"
         }

@@ -6,4 +6,4 @@ set -o xtrace
 aws s3 cp \
 	--recursive \
 	./cloudformation/generated \
-	s3://cloudcloud-site-templates/
+	s3://cloudcloud-site-cloudformation/

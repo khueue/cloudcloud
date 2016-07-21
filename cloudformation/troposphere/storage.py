@@ -11,7 +11,7 @@ import awacs.s3
 
 CONFIG = {
 	'template_bucket': {
-		'name': 'cloudcloud-site-templates',
+		'name': 'cloudcloud-site-cloudformation',
 	},
 	'app_bucket': {
 		'name': 'cloudcloud-site-app',
