@@ -7,10 +7,11 @@ rm -rf ./app/dist
 
 mkdir -p ./app/dist
 mkdir -p ./app/dist/js
-mkdir -p ./app/dist/css
 
-cp ./app/src/html/*.html ./app/dist/
+# Copy HTML index.
+cp ./app/src/html/index.html ./app/dist/
 
+# Create JS bundle.
 browserify \
 	./app/src/js/app.js \
 	--debug \
