@@ -34,11 +34,10 @@ for domain in CONFIG['public']['domain_names']:
 	)
 	record_sets.append(record_set)
 
-record_set_group = troposphere.route53.RecordSetGroup(
+record_set_group = template.add_resource(troposphere.route53.RecordSetGroup(
 	'RecordSetGroup',
 	HostedZoneName = CONFIG['public']['hosted_zone_name'] + '.',
 	RecordSets = record_sets,
-)
-template.add_resource(record_set_group)
+))
 
 print template.to_json()

@@ -10,13 +10,11 @@
                     "DefaultCacheBehavior": {
                         "AllowedMethods": [
                             "GET",
-                            "HEAD",
-                            "OPTIONS"
+                            "HEAD"
                         ],
                         "CachedMethods": [
                             "GET",
-                            "HEAD",
-                            "OPTIONS"
+                            "HEAD"
                         ],
                         "Compress": "true",
                         "DefaultTTL": 10,

@@ -24,7 +24,7 @@ CONFIG = {
 
 template = Template()
 
-cloudfront_distribution = troposphere.cloudfront.Distribution(
+cloudfront_distribution = template.add_resource(troposphere.cloudfront.Distribution(
 	'CloudFrontDistribution',
 	DistributionConfig = troposphere.cloudfront.DistributionConfig(
 		Enabled = True,
@@ -73,7 +73,6 @@ cloudfront_distribution = troposphere.cloudfront.Distribution(
 			IncludeCookies = True,
 		),
 	),
-)
-template.add_resource(cloudfront_distribution)
+))
 
 print template.to_json()

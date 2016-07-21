@@ -53,6 +53,12 @@
                 }
             },
             "Type": "AWS::S3::Bucket"
+        },
+        "TemplateBucket": {
+            "Properties": {
+                "BucketName": "cloudcloud-site-templates"
+            },
+            "Type": "AWS::S3::Bucket"
         }
     }
 }
