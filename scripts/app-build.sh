@@ -8,8 +8,8 @@ rm -rf ./app/dist
 mkdir -p ./app/dist
 mkdir -p ./app/dist/js
 
-# Copy HTML index.
-cp ./app/src/html/index.html ./app/dist/
+# Copy root files.
+cp ./app/src/*.* ./app/dist/
 
 # Create JS bundle.
 browserify \
