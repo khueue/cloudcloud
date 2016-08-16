@@ -44,7 +44,7 @@ cloudfront_distribution = template.add_resource(troposphere.cloudfront.Distribut
 			SslSupportMethod = 'sni-only',
 		),
 		DefaultCacheBehavior = troposphere.cloudfront.DefaultCacheBehavior(
-			ViewerProtocolPolicy = 'allow-all', # @todo XXX redirect-to-https when SSL is in place.
+			ViewerProtocolPolicy = 'redirect-to-https',
 			AllowedMethods = [
 				'GET',
 				'HEAD',

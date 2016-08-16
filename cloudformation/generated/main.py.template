@@ -28,7 +28,7 @@
                         "MaxTTL": 10,
                         "MinTTL": 10,
                         "TargetOriginId": "origin",
-                        "ViewerProtocolPolicy": "allow-all"
+                        "ViewerProtocolPolicy": "redirect-to-https"
                     },
                     "Enabled": "true",
                     "Logging": {
