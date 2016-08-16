@@ -45,7 +45,11 @@
                             "Id": "origin"
                         }
                     ],
-                    "PriceClass": "PriceClass_100"
+                    "PriceClass": "PriceClass_100",
+                    "ViewerCertificate": {
+                        "AcmCertificateArn": "arn:aws:acm:us-east-1:682695698822:certificate/c035d8b4-e55c-468e-b5aa-b85310ebdad5",
+                        "SslSupportMethod": "sni-only"
+                    }
                 }
             },
             "Type": "AWS::CloudFront::Distribution"

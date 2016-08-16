@@ -19,7 +19,7 @@ CONFIG = {
 		'name': 'cloudcloud-site-logs',
 		'prefix': 'cloudfront/',
 	},
-	'ssl_certificate_arn': 'arn:aws:acm:us-east-1:682695698822:certificate/ac4effec-29f1-4419-a0a7-fc3a79e00b73',
+	'ssl_certificate_arn': 'arn:aws:acm:us-east-1:682695698822:certificate/c035d8b4-e55c-468e-b5aa-b85310ebdad5',
 }
 
 template = Template()
@@ -39,11 +39,10 @@ cloudfront_distribution = template.add_resource(troposphere.cloudfront.Distribut
 				),
 			),
 		],
-		# ViewerCertificate = troposphere.cloudfront.ViewerCertificate(
-		# 	IamCertificateId = CONFIG['ssl_certificate_arn'],
-		# 	# MinimumProtocolVersion = 'TLSv1',
-		# 	SslSupportMethod = 'sni-only',
-		# ),
+		ViewerCertificate = troposphere.cloudfront.ViewerCertificate(
+			AcmCertificateArn = CONFIG['ssl_certificate_arn'],
+			SslSupportMethod = 'sni-only',
+		),
 		DefaultCacheBehavior = troposphere.cloudfront.DefaultCacheBehavior(
 			ViewerProtocolPolicy = 'allow-all', # @todo XXX redirect-to-https when SSL is in place.
 			AllowedMethods = [
