@@ -27,9 +27,10 @@
                         },
                         "MaxTTL": 10,
                         "MinTTL": 10,
-                        "TargetOriginId": "origin",
+                        "TargetOriginId": "app-s3-origin",
                         "ViewerProtocolPolicy": "redirect-to-https"
                     },
+                    "DefaultRootObject": "index.html",
                     "Enabled": "true",
                     "Logging": {
                         "Bucket": "cloudcloud-site-logs.s3.amazonaws.com",
@@ -38,11 +39,9 @@
                     },
                     "Origins": [
                         {
-                            "CustomOriginConfig": {
-                                "OriginProtocolPolicy": "http-only"
-                            },
-                            "DomainName": "cloudcloud-site-app.s3-website-eu-west-1.amazonaws.com",
-                            "Id": "origin"
+                            "DomainName": "cloudcloud-site-app.s3.amazonaws.com",
+                            "Id": "app-s3-origin",
+                            "S3OriginConfig": {}
                         }
                     ],
                     "PriceClass": "PriceClass_100",

@@ -8,9 +8,6 @@
                         "Ref": "LogBucket"
                     },
                     "LogFilePrefix": "s3/"
-                },
-                "WebsiteConfiguration": {
-                    "IndexDocument": "index.html"
                 }
             },
             "Type": "AWS::S3::Bucket"

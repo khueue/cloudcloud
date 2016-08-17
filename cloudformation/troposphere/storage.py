@@ -47,9 +47,6 @@ log_bucket = template.add_resource(troposphere.s3.Bucket(
 app_bucket = template.add_resource(troposphere.s3.Bucket(
 	'AppBucket',
 	BucketName = CONFIG['app_bucket']['name'],
-	WebsiteConfiguration = troposphere.s3.WebsiteConfiguration(
-		IndexDocument = 'index.html',
-	),
 	LoggingConfiguration = troposphere.s3.LoggingConfiguration(
 		DestinationBucketName = Ref(log_bucket),
 		LogFilePrefix = 's3/',

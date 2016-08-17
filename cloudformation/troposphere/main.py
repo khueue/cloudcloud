@@ -13,7 +13,7 @@ CONFIG = {
 		],
 	},
 	'origin': {
-		'domain_name': 'cloudcloud-site-app.s3-website-eu-west-1.amazonaws.com',
+		'domain_name': 'cloudcloud-site-app.s3.amazonaws.com',
 	},
 	'log_bucket': {
 		'name': 'cloudcloud-site-logs',
@@ -32,10 +32,9 @@ cloudfront_distribution = template.add_resource(troposphere.cloudfront.Distribut
 		Aliases = CONFIG['public']['domain_names'],
 		Origins = [
 			troposphere.cloudfront.Origin(
-				Id = 'origin',
+				Id = 'app-s3-origin',
 				DomainName = CONFIG['origin']['domain_name'],
-				CustomOriginConfig = troposphere.cloudfront.CustomOrigin(
-					OriginProtocolPolicy = 'http-only', # No SSL for S3 websites.
+				S3OriginConfig = troposphere.cloudfront.S3Origin(
 				),
 			),
 		],
@@ -43,6 +42,7 @@ cloudfront_distribution = template.add_resource(troposphere.cloudfront.Distribut
 			AcmCertificateArn = CONFIG['ssl_certificate_arn'],
 			SslSupportMethod = 'sni-only',
 		),
+		DefaultRootObject = 'index.html',
 		DefaultCacheBehavior = troposphere.cloudfront.DefaultCacheBehavior(
 			ViewerProtocolPolicy = 'redirect-to-https',
 			AllowedMethods = [
@@ -57,7 +57,7 @@ cloudfront_distribution = template.add_resource(troposphere.cloudfront.Distribut
 			DefaultTTL = 10, # @todo XXX Update this.
 			MinTTL = 10, # @todo XXX Update this.
 			MaxTTL = 10, # @todo XXX Update this.
-			TargetOriginId = 'origin',
+			TargetOriginId = 'app-s3-origin',
 			ForwardedValues = troposphere.cloudfront.ForwardedValues(
 				QueryString = False,
 				Headers = [],
