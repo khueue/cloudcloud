@@ -19,7 +19,7 @@ CONFIG = {
 		'name': 'cloudcloud-site-logs',
 		'prefix': 'cloudfront/',
 	},
-	'ssl_certificate_arn': 'arn:aws:acm:us-east-1:682695698822:certificate/c035d8b4-e55c-468e-b5aa-b85310ebdad5',
+	'ssl_certificate_arn': 'arn:aws:acm:us-east-1:682695698822:certificate/92d6717c-52a3-4c6e-9928-79f1ae68d8e1',
 }
 
 template = Template()

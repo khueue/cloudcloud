@@ -10,6 +10,7 @@ PYTHON="python -Wall -3 -B"
 
 declare -a STACKS=(
 	dns.py
+	global.py
 	main.py
 	storage.py
 )

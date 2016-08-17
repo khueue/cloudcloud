@@ -1,0 +1,13 @@
+{
+    "Resources": {
+        "SslCertificate": {
+            "Properties": {
+                "DomainName": "cloudcloud.io",
+                "SubjectAlternativeNames": [
+                    "*.cloudcloud.io"
+                ]
+            },
+            "Type": "AWS::CertificateManager::Certificate"
+        }
+    }
+}
