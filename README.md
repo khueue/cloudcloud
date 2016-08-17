@@ -4,13 +4,19 @@ cloudcloud
 
 ## Infrastructure
 
-Provision stacks in this order:
+Make sure the contact email is visible in whois for the domain. Go here to open up contact
+information for .io domains:
 
-In region **us-east-1**:
+- <https://www.nic.io/privacy.xzx>
 
-1. global
+Then provision stacks in this order:
 
-In region of your choice:
+In the region **us-east-1**:
+
+1. global (CloudFront requires certificates in this region)
+
+Accept the approval emails triggered by the certificate generation, and then
+in the region of your choice:
 
 1. storage
 2. main
