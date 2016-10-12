@@ -34,6 +34,16 @@ for domain in CONFIG['public']['domain_names']:
 	)
 	record_sets.append(record_set)
 
+	record_set = troposphere.route53.RecordSet(
+		Name = domain + '.',
+		Type = 'AAAA',
+		AliasTarget = troposphere.route53.AliasTarget(
+			HostedZoneId = CONFIG['cloudfront']['hosted_zone_id'],
+			DNSName = CONFIG['cloudfront']['domain_name'] + '.',
+		),
+	)
+	record_sets.append(record_set)
+
 record_set_group = template.add_resource(troposphere.route53.RecordSetGroup(
 	'RecordSetGroup',
 	HostedZoneName = CONFIG['public']['hosted_zone_name'] + '.',

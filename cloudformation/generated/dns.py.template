@@ -17,8 +17,24 @@
                             "DNSName": "diwuc9dghsb9d.cloudfront.net.",
                             "HostedZoneId": "Z2FDTNDATAQYW2"
                         },
+                        "Name": "cloudcloud.io.",
+                        "Type": "AAAA"
+                    },
+                    {
+                        "AliasTarget": {
+                            "DNSName": "diwuc9dghsb9d.cloudfront.net.",
+                            "HostedZoneId": "Z2FDTNDATAQYW2"
+                        },
                         "Name": "www.cloudcloud.io.",
                         "Type": "A"
+                    },
+                    {
+                        "AliasTarget": {
+                            "DNSName": "diwuc9dghsb9d.cloudfront.net.",
+                            "HostedZoneId": "Z2FDTNDATAQYW2"
+                        },
+                        "Name": "www.cloudcloud.io.",
+                        "Type": "AAAA"
                     }
                 ]
             },
